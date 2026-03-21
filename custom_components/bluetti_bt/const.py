@@ -38,6 +38,7 @@ CONTROL_FIELDS = [
     "dc_output_on_switch",
     "power_off",
     "eco_on",
+    "eco_on_ac",
     "power_lifting_on",
     "grid_enhancement_mode_on",
     "silent_charging_on",
