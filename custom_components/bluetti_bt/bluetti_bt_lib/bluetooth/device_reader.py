@@ -189,6 +189,11 @@ class DeviceReader:
                             )
                             break
                         try:
+                            _LOGGER.debug(
+                                "Polling command %s-%s",
+                                command.starting_address,
+                                command.starting_address + command.quantity - 1,
+                            )
                             body = command.parse_response(
                                 await self._async_send_command(command)
                             )
@@ -196,10 +201,12 @@ class DeviceReader:
                             parsed = self.bluetti_device.parse(
                                 command.starting_address, body
                             )
-                            _LOGGER.debug("Parsed data: %s", parsed)
+                            _LOGGER.debug("Parsed data keys: %s", list(parsed.keys()))
                             parsed_data.update(parsed)
                         except ParseError:
                             _LOGGER.warning("Got a parse exception")
+
+                    _LOGGER.debug("Total parsed keys this cycle: %s", list(parsed_data.keys()))
 
                     # Execute pack polling commands
                     if len(pack_commands) > 0 and len(self.bluetti_device.pack_num_field) == 1:

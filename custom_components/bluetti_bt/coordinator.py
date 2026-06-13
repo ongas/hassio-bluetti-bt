@@ -80,4 +80,9 @@ class PollingCoordinator(DataUpdateCoordinator):
         if bluetooth.async_address_present(self.hass, self.address) is False:
             self.logger.debug("Device address %s currently not present in scanner; attempting read anyway", mac_loggable(self.address))
 
-        return await self.reader.read_data()
+        data = await self.reader.read_data()
+        if data is None:
+            self.logger.debug("Coordinator received no parsed data for %s", mac_loggable(self.address))
+        else:
+            self.logger.debug("Coordinator received keys for %s: %s", mac_loggable(self.address), list(data.keys()))
+        return data
