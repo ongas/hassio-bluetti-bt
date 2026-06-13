@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "ha-mcp": {
+      "type": "http",
+      "url": "http://192.168.0.184:9583/private_uOFNpbMVepwI-1NcPTiPkQ",
+      "headers": {}
+    }
+  }
+}

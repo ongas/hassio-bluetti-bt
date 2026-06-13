@@ -44,6 +44,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     polling_timeout = entry.data.get(CONF_POLLING_TIMEOUT, 120)
     max_retries = entry.data.get(CONF_MAX_RETRIES, 5)
     use_encryption = entry.data.get(CONF_ENCRYPTION, False)
+    if device_name and device_name.startswith("AC70P"):
+        use_encryption = True
 
     if address is None:
         return False
