@@ -42,6 +42,7 @@ CONTROL_FIELDS = [
     "power_lifting_on",
     "grid_enhancement_mode_on",
     "silent_charging_on",
+    "charging_mode",
 ]
 
 DIAGNOSTIC_FIELDS = [
