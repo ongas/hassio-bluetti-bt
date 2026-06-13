@@ -55,10 +55,6 @@ class AC70P(ProtocolV2Device):
             ReadHoldingRegisters(1314, 2),    # AC input voltage, current
             ReadHoldingRegisters(1500, 1),    # AC output frequency
             ReadHoldingRegisters(1511, 1),    # AC output voltage
-            ReadHoldingRegisters(2011, 2),    # AC/DC output switches
-            ReadHoldingRegisters(2014, 2),    # ECO DC mode
-            ReadHoldingRegisters(2017, 2),    # ECO AC mode
-            ReadHoldingRegisters(2020, 2),    # Charging mode, power lifting
         ]
 
     @property
