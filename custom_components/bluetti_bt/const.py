@@ -39,6 +39,7 @@ CONTROL_FIELDS = [
     "power_off",
     "eco_on",
     "eco_on_ac",
+    "charging_mode",
     "power_lifting_on",
     "grid_enhancement_mode_on",
     "silent_charging_on",
